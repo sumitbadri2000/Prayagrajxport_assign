@@ -94,11 +94,11 @@ export default function Footer() {
   }, []);
   return (
     <Box
-      position={"sticky"}
+      // position={"sticky"}
       bg="rgb(247,247,247)"
       color={useColorModeValue("gray.700", "gray.200")}>
-      <Container as={Stack} maxW={"8xl"} py={10} fontSize={"18px"}>
-        <SimpleGrid columns={{ base: 1, sm: 2, md: 5 }} spacing={9}>
+      <Container as={Stack} maxW={"8xl"} py={10} fontSize={"16px"}>
+        <SimpleGrid columns={{ base: 1, sm: 2, md: 4, xl: "5" }} spacing={9}>
           <Stack align={"flex-start"} ref={socialIconRefs.text1}>
             <ListHeader>QUICK LINKS</ListHeader>
             <Box as="a" href={"#"}>

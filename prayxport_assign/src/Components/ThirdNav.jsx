@@ -1,3 +1,4 @@
+"use client";
 import {
   Box,
   Flex,
@@ -58,7 +59,7 @@ export default function Simple() {
             spacing={10}
             margin={"auto"}
             alignItems={"center"}
-            fontSize={"22px"}
+            fontSize={{ md: "14px", xl: "18px" }}
             fontWeight={"400"}>
             <HStack
               as={"nav"}

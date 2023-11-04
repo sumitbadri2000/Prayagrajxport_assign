@@ -42,7 +42,7 @@ const Navbar = () => {
           whiteSpace="nowrap"
           overflow="hidden"
           textOverflow="ellipsis"
-          fontSize={{ base: "8px", sm: "12px", md: "14px", xl: "20px" }}>
+          fontSize={{ base: "8px", sm: "12px", md: "14px", xl: "16px" }}>
           Delivering PAN India || Orders placed after 1st of November may get
           delayed and might be delivered shortly.
         </Text>
