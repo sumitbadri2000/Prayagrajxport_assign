@@ -38,6 +38,8 @@ export default function Footer() {
     text3: useRef(null),
     text4: useRef(null),
   };
+  const titleRef = useRef(null);
+  const underlineRef = useRef(null);
 
   useEffect(() => {
     const tl = gsap.timeline({ repeat: -1 });
@@ -63,12 +65,12 @@ export default function Footer() {
       duration: 3,
     });
     tl.from(socialIconRefs.facebook.current, {
-      opacity: 0,
       x: -20,
-      stagger: 0.2,
+      duration: 3,
     })
       .from(socialIconRefs.instagram.current, {
         opacity: 0,
+        duration: 3,
         x: -20,
         stagger: 0.2,
       })
@@ -76,184 +78,105 @@ export default function Footer() {
         opacity: 0,
         x: -20,
         stagger: 0.2,
+        duration: 3,
       })
       .from(socialIconRefs.youtube.current, {
         opacity: 0,
         x: -20,
         stagger: 0.2,
+        duration: 3,
       })
       .from(socialIconRefs.pinterest.current, {
         opacity: 0,
         x: -20,
         stagger: 0.2,
+        duration: 3,
       });
+    const text = gsap.timeline({ repeat: -1 });
 
+    text.from(titleRef.current, {
+      x: -20,
+      duration: 6,
+    });
+
+    text.from(underlineRef.current, {
+      width: 0,
+      duration: 9,
+    });
     return () => {
       tl.kill();
     };
   }, []);
   return (
     <Box
-      // position={"sticky"}
-      bg="rgb(247,247,247)"
+      width={"90%"}
+      margin="auto"
+      bg="rgb(51,51,51)"
+      paddingTop={8}
       color={useColorModeValue("gray.700", "gray.200")}>
-      <Container as={Stack} maxW={"8xl"} py={10} fontSize={"16px"}>
-        <SimpleGrid columns={{ base: 1, sm: 2, md: 4, xl: "5" }} spacing={9}>
-          <Stack align={"flex-start"} ref={socialIconRefs.text1}>
-            <ListHeader>QUICK LINKS</ListHeader>
-            <Box as="a" href={"#"}>
-              Overview
-            </Box>
-            <Stack direction={"row"} align={"center"} spacing={2}>
-              <Box as="a" href={"#"}>
-                About Us
-              </Box>
-            </Stack>
-            <Box as="a" href={"#"}>
-              Our Process
-            </Box>
-            <Box as="a" href={"#"}>
-              CSR Activities
-            </Box>
-            <Box as="a" href={"#"}>
-              Recipes
-            </Box>
-            <Box as="a" href={"#"}>
-              Offices
-            </Box>
-            <Box as="a" href={"#"}>
-              Retail Stores & Restaurants
-            </Box>
-          </Stack>
-          <Stack align={"flex-start"} ref={socialIconRefs.text2}>
-            <ListHeader>OUR SERVICES</ListHeader>
-            <Box as="a" href={"#"}>
-              Bulk Orders
-            </Box>
-            <Box as="a" href={"#"}>
-              Careers
-            </Box>
-            <Box as="a" href={"#"} mb={6}>
-              Contact Us
-            </Box>
-            <ListHeader>VIDEOS</ListHeader>
-            <Box as="a" href={"#"}>
-              Brand Videos
-            </Box>
-            <Box as="a" href={"#"}>
-              Recipe Videos
-            </Box>
-          </Stack>
-          <Stack align={"flex-start"} ref={socialIconRefs.text3}>
-            <ListHeader>OUR POLICES</ListHeader>
-            <Box as="a" href={"#"}>
-              Cancellation & Refund
-            </Box>
-            <Box as="a" href={"#"}>
-              Shipping
-            </Box>
-            <Box as="a" href={"#"}>
-              Payments
-            </Box>
-            <Box as="a" href={"#"}>
-              Terms & Conditions
-            </Box>
-            <Box as="a" href={"#"}>
-              Privacy Policy
-            </Box>
-            <Box as="a" href={"#"}>
-              Quality Assurance
-            </Box>
-            <Box as="a" href={"#"}>
-              Certification & Accolades
-            </Box>
-          </Stack>
-          <Stack align={"flex-start"} ref={socialIconRefs.text4}>
-            <ListHeader>REACH US</ListHeader>
-            <Box as="a" href={"#"}>
-              Email : support@haldirams.com
-            </Box>
-            <Box as="a" href={"#"}>
-              Call : +91 712-2779451
-            </Box>
-            <Box as="a" href={"#"}>
-              Customer : 10:00 AM - 6:00 PM
-            </Box>
-          </Stack>
-          <Stack align={"flex-start"}>
-            <ListHeader>Follow Us</ListHeader>
-            <Flex gap={2}>
-              <Box
-                ref={socialIconRefs.facebook}
-                borderRadius={"50%"}
-                border="1px solid rgb(234,32,6)"
-                bg={"rgb(234,32,6)"}
-                padding={1.5}>
-                <AiFillFacebook fontSize={"20px"} color="white" />
-              </Box>
-              <Box mt={1} as="a" href={"#"}>
-                Facebook
-              </Box>
-            </Flex>
-            <Flex gap={2}>
-              <Box
-                ref={socialIconRefs.instagram}
-                borderRadius={"50%"}
-                border="1px solid rgb(234,32,6)"
-                bg={"rgb(234,32,6)"}
-                padding={1.5}>
-                <AiFillInstagram fontSize={"20px"} color="white" />
-              </Box>
-              <Box mt={1} as="a" href={"#"}>
-                Instagram
-              </Box>
-            </Flex>
-            <Flex gap={2}>
-              <Box
-                ref={socialIconRefs.twitter}
-                borderRadius={"50%"}
-                border="1px solid rgb(234,32,6)"
-                bg={"rgb(234,32,6)"}
-                padding={1.5}>
-                <AiOutlineTwitter fontSize={"20px"} color="white" />
-              </Box>
-              <Box mt={1} as="a" href={"#"}>
-                Twitter
-              </Box>
-            </Flex>
-            <Flex gap={2}>
-              <Box
-                ref={socialIconRefs.youtube}
-                borderRadius={"50%"}
-                border="1px solid rgb(234,32,6)"
-                bg={"rgb(234,32,6)"}
-                padding={1.5}>
-                <AiFillYoutube fontSize={"20px"} color="white" />
-              </Box>
-              <Box mt={1} as="a" href={"#"}>
-                YouTube
-              </Box>
-            </Flex>
-            <Flex gap={2}>
-              <Box
-                ref={socialIconRefs.pinterest}
-                borderRadius={"50%"}
-                border="1px solid rgb(234,32,6)"
-                bg={"rgb(234,32,6)"}
-                padding={1.5}>
-                <BiLogoPinterest fontSize={"20px"} color="white" />
-              </Box>
-              <Box mt={1} as="a" href={"#"}>
-                Pinterest
-              </Box>
-            </Flex>
-          </Stack>
-        </SimpleGrid>
-      </Container>
+      <Flex
+        width={{ base: "50%", sm: "40%", md: "30%", xl: "20%" }}
+        margin={"auto"}
+        justifyContent={"space-around"}>
+        <Box
+          ref={socialIconRefs.facebook}
+          borderRadius={"50%"}
+          border="1px solid rgb(234,32,6)"
+          bg={"rgb(234,32,6)"}
+          padding={1.5}>
+          <AiFillFacebook fontSize={"25px"} color="white" />
+        </Box>
+
+        <Box
+          ref={socialIconRefs.instagram}
+          borderRadius={"50%"}
+          border="1px solid rgb(234,32,6)"
+          bg={"rgb(234,32,6)"}
+          padding={1.5}>
+          <AiFillInstagram fontSize={"25px"} color="white" />
+        </Box>
+
+        <Box
+          ref={socialIconRefs.twitter}
+          borderRadius={"50%"}
+          border="1px solid rgb(234,32,6)"
+          bg={"rgb(234,32,6)"}
+          padding={1.5}>
+          <AiOutlineTwitter fontSize={"25px"} color="white" />
+        </Box>
+
+        <Box
+          ref={socialIconRefs.youtube}
+          borderRadius={"50%"}
+          border="1px solid rgb(234,32,6)"
+          bg={"rgb(234,32,6)"}
+          padding={1.5}>
+          <AiFillYoutube fontSize={"25px"} color="white" />
+        </Box>
+
+        <Box
+          ref={socialIconRefs.pinterest}
+          borderRadius={"50%"}
+          border="1px solid rgb(234,32,6)"
+          bg={"rgb(234,32,6)"}
+          padding={1.5}>
+          <BiLogoPinterest fontSize={"25px"} color="white" />
+        </Box>
+      </Flex>
       <Box py={10}>
-        <Flex borderBottom="1px solid grey"></Flex>
-        <Text pt={6} fontSize={"sm"} textAlign={"center"}>
-          Copyright © 2023 Haldiram's India Pvt Ltd | Powered By Graas
+        <Flex
+          borderBottom="4px solid grey"
+          margin="auto"
+          ref={underlineRef}
+          width={"50%"}></Flex>
+        <Text
+          ref={titleRef}
+          pt={6}
+          fontSize={"sm"}
+          textAlign={"center"}
+          color="white">
+          Copyright © 2023 Haldiram's India Pvt Ltd <span> |</span> All rights
+          reserved
         </Text>
       </Box>
     </Box>

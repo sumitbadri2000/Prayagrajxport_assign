@@ -1,4 +1,4 @@
-import { Box, Flex, Image } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
 
@@ -34,9 +34,21 @@ function Banner() {
   }, []);
 
   return (
-    <Box width={"90%"} margin={"auto"} mt={12}>
+    <Box
+      p={4}
+      width={"90%"}
+      margin={"auto"}
+      textAlign={"center"}
+      background={"white"}>
+      <Heading>Our Brands</Heading>
+
+      <Box width="7%" margin="auto" borderBottom="4px solid yellow" />
+      <Text mt={4}>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+        aperiam soluta, earum officiis accusantium laboriosam.
+      </Text>
       <Flex
-        gap={6}
+        mt={"50px"}
         flexDirection={{
           base: "column",
           sm: "column",
@@ -48,7 +60,7 @@ function Banner() {
           width={{ base: "100%", sm: "100%", md: "100%", xl: "50%" }}>
           <Image
             width={"100%"}
-            src="https://www.haldirams.com/media/wysiwyg/Minute_Khana_1.png"
+            src="https://www.lays.com/sites/lays.com/files/2019-09/CheddarSC_0.png"
             alt="first"
           />
         </Box>
@@ -57,18 +69,20 @@ function Banner() {
           width={{ base: "100%", sm: "100%", md: "100%", xl: "50%" }}>
           <Image
             width={"100%"}
-            src="https://www.haldirams.com/media/wysiwyg/Dry_Fruit_2.png"
+            src="https://www.lays.com/sites/lays.com/files/2019-09/Lightly%20Salted%20Classic.png"
+            alt="sec"
+          />
+        </Box>
+        <Box
+          ref={images.image3}
+          width={{ base: "100%", sm: "100%", md: "100%", xl: "50%" }}>
+          <Image
+            width={"100%"}
+            src="https://www.lays.com/sites/lays.com/files/2021-07/HERO_Smooth%20Ranch%20Dip.png"
             alt="sec"
           />
         </Box>
       </Flex>
-      <Box mt={6}>
-        <Image
-          ref={images.image2}
-          src="https://www.haldirams.com/media/wysiwyg/India_s_Most_Trusted_Brand.png"
-          alt="banner"
-        />
-      </Box>
     </Box>
   );
 }

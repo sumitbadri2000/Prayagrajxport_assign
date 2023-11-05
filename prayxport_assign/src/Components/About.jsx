@@ -1,11 +1,13 @@
 import React, { useEffect, useRef } from "react";
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import { gsap } from "gsap";
 
 function About() {
   const imageRef = useRef(null);
 
   const textRef = useRef(null);
+  const titleRef = useRef(null);
+  const underlineRef = useRef(null);
 
   useEffect(() => {
     const textTl = gsap.timeline({ repeat: -1 });
@@ -20,54 +22,65 @@ function About() {
       x: -40,
       duration: 10,
     });
+    textTl.from(titleRef.current, {
+      opacity: 0,
+      x: -20,
+      duration: 5,
+    });
+
+    textTl.from(underlineRef.current, {
+      width: 0,
+      duration: 3,
+    });
   }, []);
 
   return (
-    <Box
-      className="about"
-      mt={8}
-      bg="white"
-      width="90%"
-      margin="auto"
-      padding="20px">
-      <Heading as="h1" textAlign="left" fontSize="28px" mt="20px" mb="10px">
+    <Box className="about" bg="white" width="90%" margin="auto" padding="20px">
+      <Heading
+        ref={titleRef}
+        as="h1"
+        textAlign={{ base: "center", sm: "center", md: "left", xl: "left" }}
+        fontSize="28px"
+        mt="20px"
+        mb="10px">
         ABOUT US
       </Heading>
+      <Box
+        width="10%"
+        margin={{ base: "auto", sm: "auto", md: "0", xl: "0" }}
+        borderBottom="4px solid yellow"
+        ref={underlineRef}
+      />
       <Flex flexDirection={{ base: "column", sm: "row" }} alignItems="center">
         <Box
           ref={textRef}
           fontSize="20px"
           textAlign="left"
           width={{ base: "100%", sm: "50%" }}>
-          <Text mt="20px">
-            Over the course of eight decades, a lot has changed about us. We
-            have relocated, undergone expansion, developed new product lines &
-            added segments, opened retail chains & stores across India and
-            embraced new markets overseas.
+          <Text mt="15px">
+            Wherever celebrations and good times happen, the LAY'S® brand will
+            be there just as it has been for more than 75 years. With flavors
+            almost as rich as our history, we have a chip or crisp flavor
+            guaranteed to bring a smile on your face.
           </Text>
           <Text>
-            One thing hasn’t changed - we’re still a tight-knit family business,
-            committed to serving the most authentic taste of India through our
-            products. Our origins can be traced back to a small namkeen shop in
-            Bikaner founded by Ganga Bishan Agarwal (Haldiram Ji). This modest
-            shop quickly gained popularity and scaled up to meet a booming
-            demand for its unique-tasting bhujia. Building on this legacy, his
-            grandson, our pioneer Mr. Shiv Kishan Agrawal steered the business
-            towards the heights it has tasted today.
+            At Lay’s we get it – and you may be closer to a farm than you think.
+            So go ahead and discover what makes Lay’s oh so delicious. Every bag
+            of Lay's Potato Chips in the US is made from our very own
+            chip-perfecting potatoes grown on over 100 farms across the US and a
+            handful in Canada. Stay tuned for more information about our farms
+            across North America and to hear from some of our farmers!
           </Text>
         </Box>
         <Box
           width={{ base: "100%", sm: "50%" }}
           mt={{ base: "20px", sm: "0" }}
           ref={imageRef}>
-          <iframe
+          <Image
+            alt=""
             width="100%"
-            height="315"
-            src="https://www.youtube.com/embed/6nP2kxxJiKU?si=9R4xBxR1NPLwNQGW"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
+            height="400px"
+            src="https://www.lays.com/sites/lays.com/themes/lays/img/img-aboutus.jpg"></Image>
         </Box>
       </Flex>
     </Box>

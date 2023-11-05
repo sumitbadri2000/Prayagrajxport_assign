@@ -1,24 +1,24 @@
+import { Box, Flex } from "@chakra-ui/react";
 import "./App.css";
 import About from "./Components/About";
 import Banner from "./Components/Banner";
-import Best from "./Components/Bestseller";
 import Carousel from "./Components/Carousel";
 import Category from "./Components/Category";
-import Diwali from "./Components/Diwali";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/topScrol";
+import ThirdNav from "./Components/ThirdNav";
+
 const App = () => {
   return (
-    <>
-      <Navbar />
-      {/* {/* <Carousel /> */}
-      <Diwali />
-      <Best />
+    <Flex flexDirection={"column"} gap={10} bg="rgb(255,226,2)" pt={4}>
+      <ThirdNav />
+
+      <Carousel />
+      <About />
       <Category />
       <Banner />
-      <About />
       <Footer />
-    </>
+    </Flex>
   );
 };
 

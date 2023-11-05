@@ -31,7 +31,7 @@ const Navbar = () => {
   return (
     <>
       {/* //first navbar */}
-      <Flex
+      {/* <Flex
         justifyContent="space-around"
         alignItems="center"
         background="rgb(250, 196, 75)">
@@ -81,9 +81,9 @@ const Navbar = () => {
             <Text ml={1}>E-Coupons</Text>
           </Flex>
         </Flex>
-      </Flex>
+      </Flex> */}
       {/* //second navbar */}
-      <SecondNav />
+      {/* <SecondNav /> */}
 
       {/* third nav */}
       <ThirdNav />

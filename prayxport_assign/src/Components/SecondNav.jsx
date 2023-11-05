@@ -45,14 +45,14 @@ export default function SecondNav() {
             aria-label="Search database"
             icon={<SearchIcon />}
             height={14}
-            fontSize={24}
+            fontSize={20}
             padding={"15px"}
             color={"white"}
             bg={"rgb(234,32,6)"}
           />
         </Flex>
         <Image
-          src="https://www.haldirams.com/static/version1698855975/frontend/Shoptimize/theme-hnagpur/en_US/images/logo.svg"
+          src="https://www.lays.com/sites/lays.com/themes/lays/img/logo-lays.png?v=2"
           alt="haldiram"
           height={"100px"}
           width={"fit-content"}

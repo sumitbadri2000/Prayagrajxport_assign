@@ -53,14 +53,18 @@ const Category = () => {
   }, []);
   return (
     <Box
+      p={4}
       width={"90%"}
       margin={"auto"}
       textAlign={"center"}
-      background={"rgb(255,255,255)"}
-      marginTop={"80px"}>
-      <Heading>Discover Categories</Heading>
-      <Box width="7%" margin="auto" borderBottom="4px solid yellow" />
+      background={"white"}>
+      <Heading>Our Business</Heading>
 
+      <Box width="7%" margin="auto" borderBottom="4px solid yellow" />
+      <Text mt={4}>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+        aperiam soluta, earum officiis accusantium laboriosam.
+      </Text>
       <Grid
         templateColumns={{
           base: "repeat(1, 1fr)",
@@ -68,62 +72,68 @@ const Category = () => {
           lg: "repeat(3, 1fr)",
         }}
         mt={"50px"}
-        gap={6}
-        fontSize="22px"
+        gap={8}
+        fontSize="18px"
         fontWeight="bolder">
         <Box height={"80%"} ref={images.image1}>
           <Image
             width={"100%"}
             height={"100%"}
             alt="sweets"
-            src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQa_acT_A7zEpQG-yhBTKJPcGa_zWcdWwqTYD4LMJSgMqYk9REb"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJURa_z75iC2eHzccGBveoQzhS-5vhXu_ipA&usqp=CAU"
           />
-          <Text m={5}>Sweets</Text>
+          <Text m={5}>Lorem</Text>
+          <Text>Lorem ipsum dolor sit amet.</Text>
         </Box>
         <Box height={"80%"} ref={images.image2}>
           <Image
             width={"100%"}
             height={"100%"}
             alt="navkeen"
-            src="https://www.sartajonline.com/cdn/shop/products/AjmeriMixture_1000x1000.jpg?v=1618312159"
+            src="https://m.media-amazon.com/images/I/811dyBVhQeL._UF350,350_QL80_.jpg"
           />
-          <Text m={5}>Naveen</Text>
+          <Text m={5}>Lorem</Text>
+          <Text>Lorem ipsum dolor sit amet.</Text>
         </Box>
         <Box height={"80%"} ref={images.image3}>
           <Image
             width={"100%"}
             height={"100%"}
             alt="beverages"
-            src="https://www.mynestle.in/media/wysiwyg/recipie_landing_page-10.jpg"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8170cMmYMtEWD69c3yhioP2jKgZevYIZz3g&usqp=CAU"
           />
-          <Text m={5}>Beverages</Text>
+          <Text m={5}>Lorem</Text>
+          <Text>Lorem ipsum dolor sit amet.</Text>
         </Box>
         <Box height={"80%"} ref={images.image4}>
           <Image
             width={"100%"}
             height={"100%"}
             alt="cookies"
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2ChocolateChipCookies.jpg/800px-2ChocolateChipCookies.jpg"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJURa_z75iC2eHzccGBveoQzhS-5vhXu_ipA&usqp=CAU"
           />
-          <Text m={5}>Cookies</Text>
+          <Text m={5}>Lorem</Text>
+          <Text>Lorem ipsum dolor sit amet.</Text>
         </Box>
         <Box height={"80%"} ref={images.image5}>
           <Image
             width={"100%"}
             height={"100%"}
             alt="eat"
-            src="https://www.haldirams.com/media/wysiwyg/5_ready_1.jpg"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbfIvC-oiGejdjlTPXpgXo8teMoLJxyZH3aQ&usqp=CAU"
           />
-          <Text m={5}>Ready to eat</Text>
+          <Text m={5}>Lorem</Text>
+          <Text>Lorem ipsum dolor sit amet.</Text>
         </Box>
         <Box height={"80%"} ref={images.image6}>
           <Image
             width={"100%"}
             height={"100%"}
             alt="festive"
-            src="https://www.haldirams.com/media/wysiwyg/6_gifting_1.jpg"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdHPtbNI4t8CsVAMp03uVlEWLOpGzJSBO8CQ&usqp=CAU"
           />
-          <Text m={5}>Festive Pack/Gift Boxes</Text>
+          <Text m={5}>Lorem</Text>
+          <Text>Lorem ipsum dolor sit amet.</Text>
         </Box>
       </Grid>
     </Box>

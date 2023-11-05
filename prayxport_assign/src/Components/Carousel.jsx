@@ -40,52 +40,21 @@ const Carousel = () => {
   }, [slideIndex]);
 
   return (
-    <div className="overlay">
+    <div className="overlay" style={{ width: "90%", margin: "auto" }}>
       <div className="carousel-container">
         <div className="carousel-slide">
           <img
-            src="https://www.haldirams.com/media/wysiwyg/Website_Festival_of_Lights_1_1_.png"
+            src="https://www.lays.com/sites/lays.com/files/2023-09/t1t1t1t1t1t1t1t1t1%20%281%29.png"
             alt="Product 1"
           />
         </div>
+
         <div className="carousel-slide">
           <img
-            src="https://www.haldirams.com/media/wysiwyg/Web_Free_Diya_Offer_1_.png"
+            src="https://www.lays.com/sites/lays.com/files/2023-08/Lay%C2%B4s%20Veggie%20Poppables%20desktop%20%281%29.png"
             alt="Product 2"
           />
         </div>
-        <div className="carousel-slide">
-          <img
-            src="https://www.haldirams.com/media/wysiwyg/HDFC-Banner_1_1_1_.jpg"
-            alt="Product 3"
-          />
-        </div>
-        <div className="carousel-slide">
-          <img
-            src="https://www.haldirams.com/media/wysiwyg/Sugar_Free_Web_1920x600px.jpg"
-            alt="Product 4"
-          />
-        </div>
-        <div className="carousel-slide">
-          <img
-            src="https://www.haldirams.com/media/wysiwyg/Web_Sweets_Banner_1.png"
-            alt="Product 5"
-          />
-        </div>
-        <div className="carousel-slide">
-          <img
-            src="https://www.haldirams.com/media/wysiwyg/Final_Loyatly_Program_Banner-Desk-new_1.jpg"
-            alt="Product 6"
-          />
-        </div>
-      </div>
-      <div className="flex_button">
-        <button className="prev" onClick={prevSlide}>
-          ❮
-        </button>
-        <button className="next" onClick={nextSlide}>
-          ❯
-        </button>
       </div>
     </div>
   );
