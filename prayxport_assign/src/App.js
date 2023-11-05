@@ -15,9 +15,9 @@ const App = () => {
 
       <Carousel />
       <About />
-      <Category />
-      <Banner />
-      <Footer />
+      {/* <Category /> */}
+      {/* <Banner /> */}
+      {/* <Footer /> */}
     </Flex>
   );
 };

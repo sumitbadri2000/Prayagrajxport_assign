@@ -63,12 +63,15 @@ export default function Simple() {
     };
   }, []);
   return (
-    <Box bg="rgb(250,196,75)" px={4} width={"90%"} margin="auto">
-      <Flex
-        h={20}
-        marginBottom={"20px"}
-        alignItems={"center"}
-        justifyContent={"space-between"}>
+    <Box
+      bg="rgb(250,196,75)"
+      px={4}
+      width={"90%"}
+      margin="auto"
+      position={"sticky"}
+      zIndex={2}
+      top={"0"}>
+      <Flex h={20} alignItems={"center"} justifyContent={"space-between"}>
         <IconButton
           size={"md"}
           color={"black"}

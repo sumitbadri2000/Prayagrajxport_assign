@@ -14,7 +14,7 @@ function About() {
     textTl.from(textRef.current, {
       x: 60,
       opacity: 0,
-      duration: 5,
+      duration: 10,
       stagger: 0.5,
     });
     const imageTl = gsap.timeline({ repeat: -1 });
@@ -37,11 +37,13 @@ function About() {
   return (
     <Box className="about" bg="white" width="90%" margin="auto" padding="20px">
       <Heading
-        ref={titleRef}
+        // ref={titleRef}
         as="h1"
         textAlign={{ base: "center", sm: "center", md: "left", xl: "left" }}
         fontSize="28px"
         mt="20px"
+        fontFamily={"Dancing Script"}
+        fontWeight={"extrabold"}
         mb="10px">
         ABOUT US
       </Heading>
@@ -51,13 +53,18 @@ function About() {
         borderBottom="4px solid yellow"
         ref={underlineRef}
       />
-      <Flex flexDirection={{ base: "column", sm: "row" }} alignItems="center">
+      <Flex
+        flexDirection={{ base: "column", sm: "row" }}
+        alignItems="center"
+        gap={"20px"}>
         <Box
+          mt={-15}
+          border={"1px solid red"}
           ref={textRef}
           fontSize="20px"
           textAlign="left"
           width={{ base: "100%", sm: "50%" }}>
-          <Text mt="15px">
+          <Text>
             Wherever celebrations and good times happen, the LAY'S® brand will
             be there just as it has been for more than 75 years. With flavors
             almost as rich as our history, we have a chip or crisp flavor
@@ -74,12 +81,12 @@ function About() {
         </Box>
         <Box
           width={{ base: "100%", sm: "50%" }}
-          mt={{ base: "20px", sm: "0" }}
+          // mt={{ base: "0px", sm: "0" }}
           ref={imageRef}>
           <Image
             alt=""
             width="100%"
-            height="400px"
+            height="360px"
             src="https://www.lays.com/sites/lays.com/themes/lays/img/img-aboutus.jpg"></Image>
         </Box>
       </Flex>
