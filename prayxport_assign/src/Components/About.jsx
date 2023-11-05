@@ -6,7 +6,6 @@ function About() {
   const imageRef = useRef(null);
 
   const textRef = useRef(null);
-  const titleRef = useRef(null);
   const underlineRef = useRef(null);
 
   useEffect(() => {
@@ -21,49 +20,49 @@ function About() {
     imageTl.from(imageRef.current, {
       x: -40,
       duration: 10,
-    });
-    textTl.from(titleRef.current, {
-      opacity: 0,
-      x: -20,
-      duration: 5,
+      stagger: 0.5,
     });
 
     textTl.from(underlineRef.current, {
       width: 0,
-      duration: 3,
+      duration: 1,
     });
   }, []);
 
   return (
     <Box className="about" bg="white" width="90%" margin="auto" padding="20px">
       <Heading
-        // ref={titleRef}
         as="h1"
-        textAlign={{ base: "center", sm: "center", md: "left", xl: "left" }}
+        textAlign={{ base: "center", sm: "center", md: "center", xl: "left" }}
         fontSize="28px"
         mt="20px"
         fontFamily={"Dancing Script"}
         fontWeight={"extrabold"}
-        mb="10px">
+        mb={{ base: "2px", sm: "4px", md: "6px", xl: "10px" }}>
         ABOUT US
       </Heading>
       <Box
         width="10%"
-        margin={{ base: "auto", sm: "auto", md: "0", xl: "0" }}
+        margin={{ base: "auto", sm: "auto", md: "auto", xl: "0" }}
+        marginBottom={{ base: "16px", sm: "14px", md: "12px", xl: "0" }}
         borderBottom="4px solid yellow"
         ref={underlineRef}
       />
       <Flex
-        flexDirection={{ base: "column", sm: "row" }}
+        flexDirection={{
+          base: "column",
+          sm: "column",
+          md: "column",
+          xl: "row",
+        }}
         alignItems="center"
         gap={"20px"}>
         <Box
           mt={-15}
-          border={"1px solid red"}
           ref={textRef}
           fontSize="20px"
           textAlign="left"
-          width={{ base: "100%", sm: "50%" }}>
+          width={{ base: "100%", sm: "100%", md: "100%", xl: "50%" }}>
           <Text>
             Wherever celebrations and good times happen, the LAY'S® brand will
             be there just as it has been for more than 75 years. With flavors
@@ -80,7 +79,7 @@ function About() {
           </Text>
         </Box>
         <Box
-          width={{ base: "100%", sm: "50%" }}
+          width={{ base: "100%", sm: "100%", md: "100%", xl: "50%" }}
           // mt={{ base: "0px", sm: "0" }}
           ref={imageRef}>
           <Image

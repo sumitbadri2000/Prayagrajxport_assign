@@ -12,8 +12,14 @@ const Category = () => {
     image6: useRef(null),
   };
 
+  const underlineRef = useRef(null);
+
   useEffect(() => {
     const tl = gsap.timeline({ repeat: -1 });
+    tl.from(underlineRef.current, {
+      width: 0,
+      duration: 1,
+    });
     tl.from(images.image1.current, {
       opacity: 0,
       duration: 2,
@@ -58,9 +64,23 @@ const Category = () => {
       margin={"auto"}
       textAlign={"center"}
       background={"white"}>
-      <Heading>Our Business</Heading>
-
-      <Box width="7%" margin="auto" borderBottom="4px solid yellow" />
+      <Heading
+        as="h1"
+        textAlign="center"
+        fontSize="28px"
+        mt="20px"
+        fontFamily={"Dancing Script"}
+        fontWeight={"extrabold"}
+        mb={{ base: "2px", sm: "4px", md: "6px", xl: "10px" }}>
+        Our Business
+      </Heading>
+      <Box
+        width="10%"
+        margin="auto"
+        marginBottom={{ base: "16px", sm: "14px", md: "12px", xl: "0" }}
+        borderBottom="4px solid yellow"
+        ref={underlineRef}
+      />
       <Text mt={4}>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
         aperiam soluta, earum officiis accusantium laboriosam.
@@ -71,7 +91,7 @@ const Category = () => {
           md: "repeat(2, 1fr)",
           lg: "repeat(3, 1fr)",
         }}
-        mt={"50px"}
+        mt={"30px"}
         gap={8}
         fontSize="18px"
         fontWeight="bolder">
@@ -82,7 +102,7 @@ const Category = () => {
             alt="sweets"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJURa_z75iC2eHzccGBveoQzhS-5vhXu_ipA&usqp=CAU"
           />
-          <Text m={5}>Lorem</Text>
+          <Text mt={3}>Lorem</Text>
           <Text>Lorem ipsum dolor sit amet.</Text>
         </Box>
         <Box height={"80%"} ref={images.image2}>
@@ -92,7 +112,7 @@ const Category = () => {
             alt="navkeen"
             src="https://m.media-amazon.com/images/I/811dyBVhQeL._UF350,350_QL80_.jpg"
           />
-          <Text m={5}>Lorem</Text>
+          <Text mt={3}>Lorem</Text>
           <Text>Lorem ipsum dolor sit amet.</Text>
         </Box>
         <Box height={"80%"} ref={images.image3}>
@@ -102,7 +122,7 @@ const Category = () => {
             alt="beverages"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8170cMmYMtEWD69c3yhioP2jKgZevYIZz3g&usqp=CAU"
           />
-          <Text m={5}>Lorem</Text>
+          <Text mt={3}>Lorem</Text>
           <Text>Lorem ipsum dolor sit amet.</Text>
         </Box>
         <Box height={"80%"} ref={images.image4}>
@@ -112,7 +132,7 @@ const Category = () => {
             alt="cookies"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJURa_z75iC2eHzccGBveoQzhS-5vhXu_ipA&usqp=CAU"
           />
-          <Text m={5}>Lorem</Text>
+          <Text mt={3}>Lorem</Text>
           <Text>Lorem ipsum dolor sit amet.</Text>
         </Box>
         <Box height={"80%"} ref={images.image5}>
@@ -122,7 +142,7 @@ const Category = () => {
             alt="eat"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbfIvC-oiGejdjlTPXpgXo8teMoLJxyZH3aQ&usqp=CAU"
           />
-          <Text m={5}>Lorem</Text>
+          <Text mt={3}>Lorem</Text>
           <Text>Lorem ipsum dolor sit amet.</Text>
         </Box>
         <Box height={"80%"} ref={images.image6}>
@@ -132,7 +152,7 @@ const Category = () => {
             alt="festive"
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdHPtbNI4t8CsVAMp03uVlEWLOpGzJSBO8CQ&usqp=CAU"
           />
-          <Text m={5}>Lorem</Text>
+          <Text mt={3}>Lorem</Text>
           <Text>Lorem ipsum dolor sit amet.</Text>
         </Box>
       </Grid>

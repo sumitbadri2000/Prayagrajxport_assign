@@ -8,10 +8,14 @@ function Banner() {
     image2: useRef(null),
     image3: useRef(null),
   };
+  const underlineRef = useRef(null);
 
   useEffect(() => {
     const tl = gsap.timeline({ repeat: -1 });
-
+    tl.from(underlineRef.current, {
+      width: 0,
+      duration: 1,
+    });
     tl.from(images.image1.current, {
       opacity: 0,
       duration: 2,
@@ -35,20 +39,34 @@ function Banner() {
 
   return (
     <Box
-      p={4}
+      p={6}
       width={"90%"}
       margin={"auto"}
       textAlign={"center"}
       background={"white"}>
-      <Heading>Our Brands</Heading>
-
-      <Box width="7%" margin="auto" borderBottom="4px solid yellow" />
+      <Heading
+        as="h1"
+        textAlign="center"
+        fontSize="28px"
+        mt="20px"
+        fontFamily={"Dancing Script"}
+        fontWeight={"extrabold"}
+        mb={{ base: "2px", sm: "4px", md: "6px", xl: "10px" }}>
+        Our Brands
+      </Heading>
+      <Box
+        width="10%"
+        margin="auto"
+        marginBottom={{ base: "16px", sm: "14px", md: "12px", xl: "0" }}
+        borderBottom="4px solid yellow"
+        ref={underlineRef}
+      />
       <Text mt={4}>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
         aperiam soluta, earum officiis accusantium laboriosam.
       </Text>
       <Flex
-        mt={"50px"}
+        mt={"20px"}
         flexDirection={{
           base: "column",
           sm: "column",

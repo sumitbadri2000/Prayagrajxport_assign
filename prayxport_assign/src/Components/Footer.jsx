@@ -115,7 +115,7 @@ export default function Footer() {
       paddingTop={8}
       color={useColorModeValue("gray.700", "gray.200")}>
       <Flex
-        width={{ base: "50%", sm: "40%", md: "30%", xl: "20%" }}
+        width={{ base: "80%", sm: "60%", md: "35%", xl: "20%" }}
         margin={"auto"}
         justifyContent={"space-around"}>
         <Box
@@ -163,20 +163,21 @@ export default function Footer() {
           <BiLogoPinterest fontSize={"25px"} color="white" />
         </Box>
       </Flex>
-      <Box py={10}>
+      <Box py={6}>
         <Flex
           borderBottom="4px solid grey"
           margin="auto"
           ref={underlineRef}
-          width={"50%"}></Flex>
+          width={"70%"}></Flex>
         <Text
           ref={titleRef}
           pt={6}
           fontSize={"sm"}
           textAlign={"center"}
+          fontFamily={"Dancing Script"}
+          fontWeight={"500"}
           color="white">
-          Copyright © 2023 Haldiram's India Pvt Ltd <span> |</span> All rights
-          reserved
+          Copyright © 2023 Frooti <span> |</span> All rights reserved
         </Text>
       </Box>
     </Box>

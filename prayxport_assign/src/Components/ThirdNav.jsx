@@ -42,7 +42,7 @@ const NavLink = (props) => {
   );
 };
 
-export default function Simple() {
+export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const boxRef1 = useRef(null);
   const boxRef2 = useRef(null);
