@@ -82,10 +82,10 @@ export default function Navbar() {
           onClick={isOpen ? onClose : onOpen}
         />
         <HStack
-          spacing={10}
+          spacing={5}
           margin={"auto"}
           alignItems={"center"}
-          fontSize={{ md: "14px", xl: "18px" }}
+          fontSize={{ base: "10px", sm: "10px", md: "8px", xl: "18px" }}
           fontWeight={"400"}>
           <Image
             ref={boxRef1}
@@ -97,7 +97,7 @@ export default function Navbar() {
           <HStack
             fontWeight={"500"}
             as={"nav"}
-            spacing={10}
+            spacing={6}
             display={{ base: "none", md: "flex" }}>
             {Links.map((link) => (
               <NavLink key={link}>{link}</NavLink>
@@ -105,8 +105,8 @@ export default function Navbar() {
             <Flex
               ref={boxRef2}
               mt={0}
-              gap={5}
-              fontSize={"30px"}
+              gap={4}
+              fontSize={{ base: "10px", sm: "14px", md: "20px", xl: "30px" }}
               _hover={{ cursor: "pointer" }}>
               <RiAccountCircleLine />
               <AiOutlineHeart />
